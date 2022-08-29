@@ -184,7 +184,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
 
     //}
-    return;
 
     const myParagraph = document.querySelector('.example');
     //You can do many this with is
@@ -198,5 +197,10 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.productForm.get('itemName').setValue('88888888');
     //console.log(this.productPost);
+  }
+
+  setVar2() {
+    this.productForm.get('itemName').setValue('sssss') ;
+    
   }
 }
