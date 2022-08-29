@@ -175,6 +175,5 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.productPost.itemCode = this.productForm.value.itemCode;
     this.productPost.itemDesc = this.productForm.value.itemDesc;
     console.log(this.productPost);
-    
   }
 }
