@@ -43,7 +43,7 @@ interface Model_Product_GetById {
 }
 interface Model_Product_Post {
   itemCode: string;
-  itemDesc: string;
+  itemName: string;
 }
 
 // ประกาศตัวแปร
@@ -61,7 +61,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   productForm!: FormGroup;
   sForm!: FormGroup;
 
-  productPost: Model_Product_Post;
+  productPost = {} as Model_Product_Post;
 
   CustomerADD: Model_CustomerADD = {
     id: '001',
@@ -171,9 +171,13 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   onSubmit() {
     console.clear();
-    //alert(this.productForm.value.itemCode);
+    alert(this.productForm.value.itemCode);
+    let ddd = this.productForm.value.itemCode;
+    console.log(ddd);
     this.productPost.itemCode = this.productForm.value.itemCode;
-    this.productPost.itemDesc = this.productForm.value.itemDesc;
+    // this.productPost.itemDesc = this.productForm.value.itemDesc;
+
+    this.productForm.get('itemName').setValue('88888888');
     console.log(this.productPost);
   }
 }
