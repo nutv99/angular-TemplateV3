@@ -42,40 +42,10 @@ interface Model_Product_GetById {
   type: string;
 }
 interface Model_Product_Post {
-  id: string;
-  type: string;
+  itemCode: string;
+  itemDesc: string;
 }
-// Model Product Section ให้ไปที่ swagger แล้ว Copy ส่วน Body มา ใส่ให้ครบ //
-interface Model_Product_GetAll {
-  id: string;
-  type: string;
-}
-interface Model_Product_GetById {
-  id: string;
-  type: string;
-}
-interface Model_Product_Post {
-  id: string;
-  type: string;
-}
-interface Model_Product_Patch {
-  id: string;
-  type: string;
-}
-interface Model_Product_Delete {
-  id: string;
-  type: string;
-}
-// ประกาศตัวแปร
 
-interface Model_Product_Patch {
-  id: string;
-  type: string;
-}
-interface Model_Product_Delete {
-  id: string;
-  type: string;
-}
 // ประกาศตัวแปร
 
 @Component({
@@ -90,6 +60,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   MessageErr!: any;
   productForm!: FormGroup;
   sForm!: FormGroup;
+
+  productPost: Model_Product_Post;
 
   CustomerADD: Model_CustomerADD = {
     id: '001',
@@ -110,8 +82,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   Product_GetAll: Model_Product_GetAll;
   Product_GetByID!: Model_Product_GetById;
   Product_Post!: Model_Product_Post;
-  Product_Patch!: Model_Product_Patch;
-  Product_Delete!: Model_Product_Delete;
   //endpoint:string = '';
 
   constructor(
@@ -199,5 +169,11 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
   }
 
-  onSubmit() {}
+  onSubmit() {
+    console.clear();
+    //alert(this.productForm.value.itemCode);
+    this.productPost.itemCode = this.productForm.value.itemCode;
+    this.productPost.itemDesc = this.productForm.value.itemDesc;
+    console.log(this.productPost);
+  }
 }
