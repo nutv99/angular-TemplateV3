@@ -6,11 +6,26 @@
 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="itemCode">รหัสสินค้า</label>
-    <input type="text" formControlName="itemCode" />
+    <input
+      type="text"
+      id="message"
+      name="message"
+      #message
+      class="example"
+      formControlName="itemCode"
+      dataName="fpercent"
+      modepatch="y"
+    />
   </div>
   <div>
     <label for="username">ชื่อสินค้า</label>
-    <input type="text" formControlName="itemName" />
+    <input
+      type="text"
+      id="message2"
+      name="message2"
+      formControlName="itemName"
+      dataName="fpercent"
+    />
   </div>
   <button type="submit">Submit</button>
 </form>

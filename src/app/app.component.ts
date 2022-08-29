@@ -170,14 +170,31 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onSubmit() {
+    const input = document.querySelector('#message') as HTMLInputElement | null;
+
+    //if (input != null) {
+    //console.log('By sss', input.value); // 👉️ "Initial value"
+
+    const refs = document.querySelectorAll(`[modepatch*="y"]`) ;
+    alert(refs.length);
+    for (let i = 0; i <= refs.length; i++) {
+      console.log(refs[i].id) ;  
+    }
+
+    //}
+    return;
+
+    const myParagraph = document.querySelector('.example');
+    //You can do many this with is
+
     console.clear();
-    alert(this.productForm.value.itemCode);
+    // alert(this.productForm.value.itemCode);
     let ddd = this.productForm.value.itemCode;
     console.log(ddd);
     this.productPost.itemCode = this.productForm.value.itemCode;
     // this.productPost.itemDesc = this.productForm.value.itemDesc;
 
     this.productForm.get('itemName').setValue('88888888');
-    console.log(this.productPost);
+    //console.log(this.productPost);
   }
 }
