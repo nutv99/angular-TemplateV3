@@ -175,10 +175,12 @@ export class AppComponent implements OnInit, AfterViewInit {
     //if (input != null) {
     //console.log('By sss', input.value); // 👉️ "Initial value"
 
-    const refs = document.querySelectorAll(`[modepatch*="y"]`) ;
+    const refs = document.querySelectorAll(`[modepatch*="y"]`);
     alert(refs.length);
     for (let i = 0; i <= refs.length; i++) {
-      console.log(refs[i].id) ;  
+      console.log(refs[i].id);
+      var cc = document.getElementById(refs[i].id) as HTMLInputElement;
+      console.log('By QALL ', cc.value);
     }
 
     //}
