@@ -19,6 +19,8 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { GeneralService } from './general.service';
 
+
+
 // Step-2 ประกาศ Model
 interface Model_CustomerADD {
   id: string;
@@ -201,6 +203,6 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   setVar2() {
     this.productForm.get('itemName').setValue('sssss') ;
-    
+
   }
 }
