@@ -33,11 +33,9 @@ interface Model_DepartmentEdit {
 }
 
 interface Model_productEdit {
-  itemName: string,
-  BalanceStock : number,
+  itemName: string;
+  BalanceStock: number;
 }
-
-
 
 // Model Product Section ให้ไปที่ swagger แล้ว Copy ส่วน Body มา ใส่ให้ครบ //
 interface Model_Product_GetAll {
@@ -67,6 +65,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   MessageErr!: any;
   productForm!: FormGroup;
   sForm!: FormGroup;
+  editPayload = {
+    itemName: '',
+    BalanceStock: 0,
+  } as Model_productEdit;
 
   productPost = {} as Model_Product_Post;
 
@@ -100,8 +102,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     //   itemCode: new FormControl('', Validators.required),
     //   itemName: new FormControl('', Validators.required),
     // });
-   
-    
   }
 
   ngOnInit() {
@@ -110,8 +110,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.productForm = this.fb.group({
       itemCode: ['Sammy'],
       itemName: [''],
-      BalanceStock : [0],
-
+      BalanceStock: [0],
     });
 
     let data = this.getEmployees();
@@ -225,11 +224,14 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   giveEditModel() {
-  let editPayload : Model_productEdit ; 
-      
-     
-
-
+    //this.editPayload.itemName = 'ssss';
+    console.clear();
+    const r = Object.keys(this.editPayload);
+    r.forEach(function (value) {
+      console.log(value);
+      this.editPa
+    });
+    console.log(r);
   }
   // submit2() {
 
