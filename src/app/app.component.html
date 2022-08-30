@@ -15,6 +15,7 @@
       formControlName="itemCode"
       dataName="fpercent"
       modepatch="y"
+      [(ngModel)]="i999"
     />
   </div>
   <div>
@@ -45,6 +46,7 @@
 <br />
 <button type="button" (click)="giveEditModel()">สร้างตัวแปร Edit</button>
 
+<button type="button" (click)="seti999()">Set 999</button>
 {{ productForm.value | json }}
 
 <div

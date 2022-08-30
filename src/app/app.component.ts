@@ -84,6 +84,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     departmentDesc: '',
   };
 
+  i999: string = '';
+
   isLoading: boolean = false;
   testMode: boolean = true;
   apiURL: string = 'https://lovetoshopmall.com/dataservice/';
@@ -181,6 +183,10 @@ export class AppComponent implements OnInit, AfterViewInit {
     return throwError(() => {
       return errorMessage;
     });
+  }
+
+  seti999() {
+    this.i999 = 'ddddd';
   }
 
   onSubmit() {
