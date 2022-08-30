@@ -224,22 +224,37 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   giveEditModel() {
-   // https://www.angularjswiki.com/angular/how-to-loop-over-typescript-map-in-angular/
+    // https://www.angularjswiki.com/angular/how-to-loop-over-typescript-map-in-angular/
     //this.editPayload.itemName = 'ssss';
-    var mapObject = new Map<string,boolean>();
+    //var mapObject = new Map<string, boolean>();
     // for (let entry of this.editPayload.entries()) {
     //   let mapKey = entry[0];
     //   let mapValue = entry[1];
     //   console.log(`Map key is:${mapKey} and value is:${mapValue}`);
     // }
+    var aaa = this.productForm;
+    var bbb = this.editPayload;
+    var st = '{';
+
+    // alert(this.productForm.get('itemName').value);
     console.clear();
+
     const r = Object.keys(this.editPayload);
     r.forEach(function (value) {
-      console.log(value) ;       
-      //this.editPayload.itemName = 'ssss' ;
+      console.log(value);
+      var sKey = value;
+      console.log('Data ', aaa.get(sKey).value);
+      st = st + '"' + sKey + '" : "' + aaa.get(sKey).value + '",';
     });
 
-    console.log(r);
+    st = st.slice(-1);
+    st = st + '}';
+
+    console.log(st);
+    //let obj = JSON.parse(st);
+    //alert(obj.itemName);
+
+    // console.log('Final R Is ', r);
   }
   // submit2() {
 
