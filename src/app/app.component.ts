@@ -253,7 +253,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     var bbb = this.editPayload;
     var st = '{';
 
-    this.editPayload = this.generalService.takeDataPatch(this.productForm, this.editPayload);
+    this.editPayload = this.generalService.takeDataPatchByModel(this.productForm, this.editPayload);
     //alert(bbb.itemName)
     console.log('Payload ', this.editPayload);
 
