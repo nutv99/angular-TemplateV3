@@ -25,7 +25,16 @@
       name="message2"
       formControlName="itemName"
       dataName="fpercent"
-      value=""
+    />
+  </div>
+  <div>
+    <label for="username">คงเหลือ</label>
+    <input
+      type="text"
+      id="message2"
+      name="message2"
+      formControlName="BalanceStock"
+      dataName="BalanceStock"
     />
   </div>
   <button type="submit">Submit</button>
@@ -33,6 +42,8 @@
 <button type="button" (click)="setVar2()">Set ค่าใน Form</button>
 
 <button type="button" (click)="getVar2()">Get ค่าใน Form</button>
+<br />
+<button type="button" (click)="giveEditModel()">สร้างตัวแปร Edit</button>
 
 {{ productForm.value | json }}
 
