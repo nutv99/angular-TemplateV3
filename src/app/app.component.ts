@@ -14,7 +14,7 @@ import {
   FormGroup,
 } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { map,tap, finalize } from 'rxjs/operators';
+import { map, tap, finalize } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { GeneralService } from './general.service';
@@ -108,7 +108,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     // this.get_EmployeeByID();
-    //this.Product_GetAll. 
+    //this.Product_GetAll.
     this.get_EmployeeByID();
     this.productForm = this.fb.group({
       itemCode: ['Sammy'],
@@ -148,26 +148,28 @@ export class AppComponent implements OnInit, AfterViewInit {
     );
 
     http$
-    .pipe(
-      tap(data => {
-        console.log("Anlagenstatus Daten:", data) 
-      }) 
-    )    
-    .subscribe({
-      next: (res) => {
-        console.log('By Next ',res);
-        this.Message = 'ค้นคืนข้อมูล สำเร็จ' + res;
-      },
-      error: (err: Error) => {
-        err: err ? err : 'เกิดข้อผิดพลาด ไม่สามารถ ค้นคืนข้อมูล' + err.message;
-        this.Message =
-          'เกิดข้อผิดพลาด ไม่สามารถ ค้นคืนข้อมูล ::: ' + err.message;
-        console.error(err);
-      },
-      complete: () => {
-        console.info('complete'); // Stop & Destroy Observable
-      },
-    });
+      .pipe(
+        tap((data) => {
+          console.log('Anlagenstatus Daten:', data);
+        })
+      )
+      .subscribe({
+        next: (res) => {
+          console.log('By Next ', res);
+          this.Message = 'ค้นคืนข้อมูล สำเร็จ' + res;
+        },
+        error: (err: Error) => {
+          err: err
+            ? err
+            : 'เกิดข้อผิดพลาด ไม่สามารถ ค้นคืนข้อมูล' + err.message;
+          this.Message =
+            'เกิดข้อผิดพลาด ไม่สามารถ ค้นคืนข้อมูล ::: ' + err.message;
+          console.error(err);
+        },
+        complete: () => {
+          console.info('complete'); // Stop & Destroy Observable
+        },
+      });
   }
 
   getEmployees(): Observable<Model_DepartmentEdit> {
@@ -249,23 +251,27 @@ export class AppComponent implements OnInit, AfterViewInit {
     var bbb = this.editPayload;
     var st = '{';
 
+    this.editPayload = this.generalService.takeDataPatch(this.productForm, this.editPayload);
+    //alert(bbb.itemName)
+    console.log('Payload ', this.editPayload);
+
     // alert(this.productForm.get('itemName').value);
 
-    const r = Object.keys(bbb);
-    r.forEach(function (value) {
-      console.log(value);
-      var sKey = value;
-      console.log('Data ', aaa.get(sKey).value);
-      st = st + '"' + sKey + '" : "' + aaa.get(sKey).value + '",';
-    });
+    // const r = Object.keys(bbb);
+    // r.forEach(function (value) {
+    //   console.log(value);
+    //   var sKey = value;
+    //   console.log('Data ', aaa.get(sKey).value);
+    //   st = st + '"' + sKey + '" : "' + aaa.get(sKey).value + '",';
+    // });
 
-    console.log('Step-1', st);
-    let st2 = st.slice(0, -1);
-    st2 = st2 + '}';
+    // console.log('Step-1', st);
+    // let st2 = st.slice(0, -1);
+    // st2 = st2 + '}';
 
-    console.log(st2);
-    let obj = JSON.parse(st2);
-    alert(obj.itemName);
+    // console.log(st2);
+    // let obj = JSON.parse(st2);
+    // alert(obj.itemName) ;
   }
   // submit2() {
 
