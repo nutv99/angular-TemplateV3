@@ -7,23 +7,42 @@ export class GeneralService {
   constructor() {}
 
 
-takeDataPatch (dataOnForm:any,dataToPatch:any) { 
-var st:string  = '{';
+takeDataPatchByModel (dataOnForm:any,dataToPatch:any) { 
+var stJson:string  = '{';
 var st2:string  = '';
 
   const r = Object.keys(dataToPatch);
   r.forEach(function (value) {  
       var sKey = value;
       console.log('Data ', dataOnForm.get(sKey).value);
-      st = st + '"' + sKey + '" : "' + dataOnForm.get(sKey).value + '",';
+      stJson = stJson + '"' + sKey + '" : "' + dataOnForm.get(sKey).value + '",';
   });
 
-  st2 = st.slice(0, -1) + '}';
+  st2 = stJson.slice(0, -1) + '}';
   dataToPatch = JSON.parse(st2) ;
 
   return dataToPatch ;
 
+}
 
-}  
+takeDataPatchByAttribute (dataOnForm:any,dataToPatch:any) { 
+  var stJson:string  = '{';
+  var st2:string  = '';
+  
+  const refs = document.querySelectorAll(`[modepatch*="y"]`);
+  alert(refs.length);
+  for (let i = 0; i <= refs.length; i++) {
+    console.log(refs[i].id);
+    var cc = document.getElementById(refs[i].id) as HTMLInputElement;
+    console.log('By QALL ', cc.value);
+  }
+  
+    st2 = stJson.slice(0, -1) + '}';
+    dataToPatch = JSON.parse(st2) ;
+  
+    return dataToPatch ;
+  
+  }
+
   
 }
