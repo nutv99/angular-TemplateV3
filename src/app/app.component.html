@@ -25,11 +25,15 @@
       name="message2"
       formControlName="itemName"
       dataName="fpercent"
+      value=""
     />
   </div>
   <button type="submit">Submit</button>
 </form>
 <button type="button" (click)="setVar2()">Set ค่าใน Form</button>
+
+<button type="button" (click)="getVar2()">Get ค่าใน Form</button>
+
 {{ productForm.value | json }}
 
 <div

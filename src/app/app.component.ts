@@ -89,9 +89,14 @@ export class AppComponent implements OnInit, AfterViewInit {
     private fb: FormBuilder,
     private generalService: GeneralService
   ) {
+    // this.productForm = this.fb.group({
+    //   itemCode: new FormControl('', Validators.required),
+    //   itemName: new FormControl('', Validators.required),
+    // });
+
     this.productForm = this.fb.group({
-      itemCode: new FormControl('', Validators.required),
-      itemName: new FormControl('', Validators.required),
+      itemCode: ['Sammy', Validators.required],
+      itemName: ['', Validators.required],
     });
   }
 
@@ -203,6 +208,11 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.productForm.get('itemName').setValue('sssss');
   }
 
+  getVar2() {
+    // alert(this.sForm.get('itemName').value);
+    console.clear();
+    console.log(this.sForm.value.itemName);
+  }
   // submit2() {
 
   //     let data2: any = this.sForm;
