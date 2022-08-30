@@ -58,6 +58,8 @@ interface Model_Product_Post {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
+
+
 export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('myNameElem') myNameElem: ElementRef;
 
