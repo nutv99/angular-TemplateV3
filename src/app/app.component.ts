@@ -237,9 +237,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     var st = '{';
 
     // alert(this.productForm.get('itemName').value);
-    console.clear();
 
-    const r = Object.keys(this.editPayload);
+    const r = Object.keys(bbb);
     r.forEach(function (value) {
       console.log(value);
       var sKey = value;
@@ -247,14 +246,13 @@ export class AppComponent implements OnInit, AfterViewInit {
       st = st + '"' + sKey + '" : "' + aaa.get(sKey).value + '",';
     });
 
-    st = st.slice(-1);
-    st = st + '}';
+    console.log('Step-1', st);
+    let st2 = st.slice(0, -1);
+    st2 = st2 + '}';
 
-    console.log(st);
-    //let obj = JSON.parse(st);
-    //alert(obj.itemName);
-
-    // console.log('Final R Is ', r);
+    console.log(st2);
+    let obj = JSON.parse(st2);
+    alert(obj.itemName);
   }
   // submit2() {
 
