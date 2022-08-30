@@ -248,7 +248,9 @@ export class AppComponent implements OnInit, AfterViewInit {
     //   let mapKey = entry[0];
     //   let mapValue = entry[1];
     //   console.log(`Map key is:${mapKey} and value is:${mapValue}`);
-    // }
+    // } 
+
+    this.generalService.takeDataPatchByAttribute (this.productForm, this.editPayload);
     var aaa = this.productForm;
     var bbb = this.editPayload;
     var st = '{';
