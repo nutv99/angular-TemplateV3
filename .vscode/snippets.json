@@ -1,0 +1,62 @@
+{
+  "form99": {
+    "scope": "html",
+    "prefix": "form99",
+    "body": [
+      "// HTML FORM",
+      "<!-- ",
+      "1.เปลี่ยนชื่อ fromGroup ",
+      "2.เพิ่ม Input ให้ครบ  ",
+      "3.เชื่อมโยง Field ให้ตรงกับ sForm ใน ts",
+      "-->",
+      "<form [formGroup]='productForm' (ngSubmit)='onSubmit()'>",
+      "  <div>",
+      "    <label for='itemCode'>รหัสสินค้า</label>",
+      "    <input",
+      "      type='text'",
+      "      id='message'",
+      "      name='message'",
+      "      #message",
+      "      class=''",
+      "      formControlName='itemCode'",
+      "      dataName='fpercent'",
+      "      modepatch='y'",
+      "    />",
+      "  </div>",
+      "  <button type='submit' (click)='SaveData()'>Submit</button>",
+      "</form> "
+    ],
+    "description": "Log output to console"
+  },
+  "import99": {
+    "scope": "javascript,typescript",
+    "prefix": "import99",
+    "body": [
+       "// Import Section",
+" import { Component, OnInit,  ViewChild,  ElementRef,  AfterViewInit } from '@angular/core';",
+" import { HttpClient } from '@angular/common/http';",
+" import {  FormControl,  FormBuilder,  Validators,  FormGroup,} from '@angular/forms';",
+" import { Subject } from 'rxjs';",
+" import { tap, finalize } from 'rxjs/operators';",
+" import { Observable, throwError } from 'rxjs';",
+" import { retry, catchError } from 'rxjs/operators';",
+    ],
+    "description": "Log output to console"
+  },
+  "var99": {
+    "scope": "javascript,typescript",
+    "prefix": "var99",
+    "body": [
+       "// Declare Global Var", 
+       "sForm!: FormGroup;",
+       "results: any ;",
+       "sData: any;",
+       "id: number = 0;"
+
+    ],
+    "description": "Log output to console"
+  }
+
+}
+
+

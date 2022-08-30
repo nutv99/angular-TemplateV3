@@ -19,8 +19,6 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { GeneralService } from './general.service';
 
-
-
 // Step-2 ประกาศ Model
 interface Model_CustomerADD {
   id: string;
@@ -55,6 +53,7 @@ interface Model_Product_Post {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
+
 export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('myNameElem') myNameElem: ElementRef;
 
@@ -203,6 +202,32 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   setVar2() {
     this.productForm.get('itemName').setValue('sssss') ;
+  }
 
+  submit2() {
+
+      let data2: any = this.sForm;
+      data2.id = this.BrandData.id;
+      // console.log('Show payload', data2);
+      this.fetch
+        .patchById(this.UrlPatch, this.sForm.value, this.id)
+        .subscribe(           
+           next: (res) => {
+            console.log(res);
+            this.Message = 'ค้นคืนข้อมูล สำเร็จ' + res;
+          },
+          error: (err: Error) => {
+            err: err ? err : 'เกิดข้อผิดพลาด ไม่สามารถ ค้นคืนข้อมูล' + err.message;
+            this.Message =
+              'เกิดข้อผิดพลาด ไม่สามารถ ค้นคืนข้อมูล ::: ' + err.message;
+            console.error(err);
+          },
+          complete: () => {
+            console.info('complete'); // Stop  & Destroy Observable Var
+          },
+           
+           
+        );
+      
   }
 }
