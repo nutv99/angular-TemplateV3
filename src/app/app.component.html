@@ -2,33 +2,27 @@
 <!-- <input type="text" #AAA name="AAA" value="Noom" />
 <input type="text" name="name" #myNameElem value="sasasas" />
 {{ DataFromBackEnd | json }} -->
-
+<app-waitscreen [waitScreenShow]="waitScreenShow"></app-waitscreen>
 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="itemCode">รหัสสินค้า</label>
     <input
       type="text"
-      id="itemCode"            
+      id="itemCode"
       class="example"
-      formControlName="itemCode"      
+      formControlName="itemCode"
       [(ngModel)]="i999"
     />
   </div>
   <div>
     <label for="username">ชื่อสินค้า</label>
-    <input
-      type="text"
-      id="ItemName"      
-      modepatch="y"
-      formControlName="itemName"
-      
-    />
+    <input type="text" id="ItemName" modepatch="y" formControlName="itemName" />
   </div>
   <div>
     <label for="username">คงเหลือ</label>
     <input
       type="text"
-      id="BalanceStock"      
+      id="BalanceStock"
       formControlName="BalanceStock"
       modepatch="y"
       dataName="BalanceStock"
@@ -43,6 +37,9 @@
 <button type="button" (click)="giveEditModel()">สร้างตัวแปร Edit</button>
 
 <button type="button" (click)="seti999()">Set 999</button>
+
+<br />
+<button type="button" (click)="showWaitScreen()">Show Wait Screen</button>
 {{ productForm.value | json }}
 
 <div

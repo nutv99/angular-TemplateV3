@@ -18,6 +18,7 @@ import { map, tap, finalize } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { GeneralServiceByNoom } from './general.service';
+import { WaitscreenComponent } from './waitscreen/waitscreen.component';
 
 // Step-2 ประกาศ Model
 interface Model_CustomerADD {
@@ -61,6 +62,7 @@ interface Model_Product_Post {
 export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('myNameElem') myNameElem: ElementRef;
 
+  waitScreenShow: boolean = false;
   Message: string = 'idle';
   MessageErr!: any;
   productForm!: FormGroup;
@@ -142,13 +144,13 @@ export class AppComponent implements OnInit, AfterViewInit {
     console.log('Key--After ViewInit', Object.keys(this.DataFromBackEnd));
   }
 
-// GET DATA BY ID
+  // GET DATA BY ID
   get_EmployeeByID() {
-  const http$ = this.myhttp.get<Model_DepartmentEdit>(
+    const http$ = this.myhttp.get<Model_DepartmentEdit>(
       'https://lovetoshopmall.com/dataservice/categoryTest888.php'
-   );
+    );
 
-   http$
+    http$
       .pipe(
         tap((data) => {
           console.log('Anlagenstatus Daten:', data);
@@ -173,7 +175,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       });
   }
 
-// GET ALL DATA   
+  // GET ALL DATA
   getAllEmployees(): Observable<Model_DepartmentEdit> {
     return this.myhttp
       .get<Model_DepartmentEdit>(this.apiURL + '/categoryTest.php')
@@ -238,6 +240,13 @@ export class AppComponent implements OnInit, AfterViewInit {
     alert(this.productForm.get('itemName').value);
     console.clear();
     console.log(this.productForm.value.itemName);
+  }
+
+  showWaitScreen() {
+    this.waitScreenShow = true;
+  }
+  hideWaitScreen() {
+    this.waitScreenShow = false;
   }
 
   giveEditModel() {
