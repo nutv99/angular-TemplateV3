@@ -157,7 +157,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         tap((data) => {
           console.log('Success', data);
         }),
-        delay(2000)
+        delay(4000)
       )
       .subscribe({
         next: (res) => {
