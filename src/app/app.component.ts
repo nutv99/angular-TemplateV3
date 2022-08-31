@@ -14,7 +14,7 @@ import {
   FormGroup,
 } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { map, tap, finalize } from 'rxjs/operators';
+import { delay, map, tap, finalize } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { GeneralServiceByNoom } from './general.service';
@@ -111,7 +111,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     // this.get_EmployeeByID();
     //this.Product_GetAll.
-    this.get_EmployeeByID();
+    //this.get_EmployeeByID();
     this.productForm = this.fb.group({
       itemCode: ['Sammy'],
       itemName: [''],
@@ -146,20 +146,24 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   // GET DATA BY ID
   get_EmployeeByID() {
+    this.waitScreenShow = true;
+
     const http$ = this.myhttp.get<Model_DepartmentEdit>(
-      'https://lovetoshopmall.com/dataservice/categoryTest888.php'
+      'https://lovetoshopmall.com/dataservice/categoryTest.php'
     );
 
     http$
       .pipe(
         tap((data) => {
-          console.log('Anlagenstatus Daten:', data);
-        })
+          console.log('Success', data);
+        }),
+        delay(200)
       )
       .subscribe({
         next: (res) => {
           console.log('By Next ', res);
           this.Message = 'ค้นคืนข้อมูล สำเร็จ' + res;
+          this.hideWaitScreen();
         },
         error: (err: Error) => {
           err: err
@@ -168,9 +172,14 @@ export class AppComponent implements OnInit, AfterViewInit {
           this.Message =
             'เกิดข้อผิดพลาด ไม่สามารถ ค้นคืนข้อมูล ::: ' + err.message;
           console.error(err);
+
+          this.hideWaitScreen();
+          alert(this.Message);
         },
         complete: () => {
           console.info('complete'); // Stop & Destroy Observable
+
+          this.hideWaitScreen();
         },
       });
   }

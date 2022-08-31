@@ -46,5 +46,9 @@ takeDataPatchByAttribute () {
   
   }
 
-  
+  delay(seconds:number) {  
+    
+
+
+  }
 }

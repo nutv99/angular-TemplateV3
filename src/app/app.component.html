@@ -2,7 +2,10 @@
 <!-- <input type="text" #AAA name="AAA" value="Noom" />
 <input type="text" name="name" #myNameElem value="sasasas" />
 {{ DataFromBackEnd | json }} -->
-<app-waitscreen [waitScreenShow]="waitScreenShow"></app-waitscreen>
+<app-waitscreen
+  [waitScreenShow]="waitScreenShow"
+  [Message]="'กำลังUploadแบบฟอร์ม'"
+></app-waitscreen>
 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="itemCode">รหัสสินค้า</label>
@@ -39,6 +42,9 @@
 <button type="button" (click)="seti999()">Set 999</button>
 
 <br />
+
+<button type="button" (click)="get_EmployeeByID()">ดึงค่า</button>
+
 <button type="button" (click)="showWaitScreen()">Show Wait Screen</button>
 {{ productForm.value | json }}
 
