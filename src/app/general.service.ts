@@ -38,7 +38,6 @@ takeDataPatchByAttribute () {
     elemTemp = document.getElementById(refs[i].id) as HTMLInputElement; 
     stJson = stJson + '"' + refs[i].id + '" : "' +  elemTemp.value + '",' ;
     // console.log('stJson',stJson) ;
-
   }
   
   st2 = stJson.slice(0, -1) + '}';
