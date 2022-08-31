@@ -146,8 +146,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   get_EmployeeByID() {
   const http$ = this.myhttp.get<Model_DepartmentEdit>(
       'https://lovetoshopmall.com/dataservice/categoryTest888.php'
-    );
-    http$
+   );
+
+   http$
       .pipe(
         tap((data) => {
           console.log('Anlagenstatus Daten:', data);
