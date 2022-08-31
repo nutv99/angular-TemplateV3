@@ -32,10 +32,11 @@ takeDataPatchByAttribute (dataOnForm:any,dataToPatch:any) {
   
   const refs = document.querySelectorAll(`[modepatch*="y"]`);
   
-  for (let i = 0; i <= refs.length; i++) {
+  for (let i = 0; i <= refs.length-1; i++) {
     console.log(refs[i].id);
     elemTemp = document.getElementById(refs[i].id) as HTMLInputElement; 
     stJson = stJson + '"' + refs[i].id + '" : "' +  elemTemp.value + '",' ;
+    console.log('stJson',stJson) ;
 
   }
   
