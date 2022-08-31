@@ -15,12 +15,12 @@
       "    <input",
       "      type='text'",
       "      id='message'",
-      "      name='message'",
-      "      #message",
       "      class=''",
       "      formControlName='itemCode'",
-      "      dataName='fpercent'",
+      "      modepost='y'",
       "      modepatch='y'",
+      "      modeDelete='y'",
+      "      mode='AED'",
       "    />",
       "  </div>",
       "  <button type='submit' (click)='SaveData()'>Submit</button>",
@@ -32,14 +32,14 @@
     "scope": "javascript,typescript",
     "prefix": "import99",
     "body": [
-       "// Import Section",
-" import { Component, OnInit,  ViewChild,  ElementRef,  AfterViewInit } from '@angular/core';",
-" import { HttpClient } from '@angular/common/http';",
-" import {  FormControl,  FormBuilder,  Validators,  FormGroup,} from '@angular/forms';",
-" import { Subject } from 'rxjs';",
-" import { tap, finalize } from 'rxjs/operators';",
-" import { Observable, throwError } from 'rxjs';",
-" import { retry, catchError } from 'rxjs/operators';",
+      "// Import Section",
+      " import { Component, OnInit,  ViewChild,  ElementRef,  AfterViewInit } from '@angular/core';",
+      " import { HttpClient } from '@angular/common/http';",
+      " import {  FormControl,  FormBuilder,  Validators,  FormGroup,} from '@angular/forms';",
+      " import { Subject } from 'rxjs';",
+      " import { tap, finalize } from 'rxjs/operators';",
+      " import { Observable, throwError } from 'rxjs';",
+      " import { retry, catchError } from 'rxjs/operators';"
     ],
     "description": "Log output to console"
   },
@@ -47,16 +47,12 @@
     "scope": "javascript,typescript",
     "prefix": "var99",
     "body": [
-       "// Declare Global Var", 
-       "sForm!: FormGroup;",
-       "results: any ;",
-       "sData: any;",
-       "id: number = 0;"
-
+      "// Declare Global Var",
+      "sForm!: FormGroup;",
+      "results: any ;",
+      "sData: any;",
+      "id: number = 0;"
     ],
     "description": "Log output to console"
   }
-
 }
-
-

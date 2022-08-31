@@ -116,7 +116,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       BalanceStock: [0],
     });
 
-    let data = this.getEmployees();
+    let data = this.getAllEmployees();
     data.subscribe({
       next: (res) => {
         console.log(res);
@@ -142,11 +142,11 @@ export class AppComponent implements OnInit, AfterViewInit {
     console.log('Key--After ViewInit', Object.keys(this.DataFromBackEnd));
   }
 
+
   get_EmployeeByID() {
-    const http$ = this.myhttp.get<Model_DepartmentEdit>(
+  const http$ = this.myhttp.get<Model_DepartmentEdit>(
       'https://lovetoshopmall.com/dataservice/categoryTest888.php'
     );
-
     http$
       .pipe(
         tap((data) => {
@@ -172,7 +172,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       });
   }
 
-  getEmployees(): Observable<Model_DepartmentEdit> {
+  getAllEmployees(): Observable<Model_DepartmentEdit> {
     return this.myhttp
       .get<Model_DepartmentEdit>(this.apiURL + '/categoryTest.php')
       .pipe(retry(1), catchError(this.handleError));
