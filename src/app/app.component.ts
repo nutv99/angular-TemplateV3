@@ -146,8 +146,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   // GET DATA BY ID
   get_EmployeeByID() {
-    this.waitScreenShow = true;
 
+    this.waitScreenShow = true ;
     const http$ = this.myhttp.get<Model_DepartmentEdit>(
       'https://lovetoshopmall.com/dataservice/categoryTest.php'
     );
@@ -157,7 +157,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         tap((data) => {
           console.log('Success', data);
         }),
-        delay(400)
+        delay(2000)
       )
       .subscribe({
         next: (res) => {
