@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class GeneralService {
-  constructor() {}
+export class GeneralServiceByNoom {
+constructor() {}
 
 
 takeDataPatchByModel (dataOnForm:any,dataToPatch:any) { 

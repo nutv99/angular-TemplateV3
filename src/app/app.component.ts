@@ -17,7 +17,7 @@ import { Subject } from 'rxjs';
 import { map, tap, finalize } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-import { GeneralService } from './general.service';
+import { GeneralServiceByNoom } from './general.service';
 
 // Step-2 ประกาศ Model
 interface Model_CustomerADD {
@@ -98,7 +98,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   constructor(
     private myhttp: HttpClient,
     private fb: FormBuilder,
-    private generalService: GeneralService
+    private generalService: GeneralServiceByNoom
   ) {
     // this.productForm = this.fb.group({
     //   itemCode: new FormControl('', Validators.required),
