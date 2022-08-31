@@ -146,8 +146,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   // GET DATA BY ID
   get_EmployeeByID() {
-
-    this.waitScreenShow = true ;
+    this.waitScreenShow = true;
     const http$ = this.myhttp.get<Model_DepartmentEdit>(
       'https://lovetoshopmall.com/dataservice/categoryTest999.php'
     );
@@ -170,7 +169,7 @@ export class AppComponent implements OnInit, AfterViewInit {
             ? err
             : 'เกิดข้อผิดพลาด ไม่สามารถ ค้นคืนข้อมูล' + err.message + err.name;
           this.Message =
-            'เกิดข้อผิดพลาด ไม่สามารถ ค้นคืนข้อมูล ::: ' + err.stack;
+            'เกิดข้อผิดพลาด ไม่สามารถ ค้นคืนข้อมูล ::: ' + err.name;
           console.error(err);
           this.hideWaitScreen();
           alert(this.Message);
