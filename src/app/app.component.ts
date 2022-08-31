@@ -149,7 +149,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.waitScreenShow = true ;
     const http$ = this.myhttp.get<Model_DepartmentEdit>(
-      'https://lovetoshopmall.com/dataservice/categoryTest.php'
+      'https://lovetoshopmall.com/dataservice/categoryTest999.php'
     );
 
     http$
@@ -168,9 +168,9 @@ export class AppComponent implements OnInit, AfterViewInit {
         error: (err: Error) => {
           err: err
             ? err
-            : 'เกิดข้อผิดพลาด ไม่สามารถ ค้นคืนข้อมูล' + err.message;
+            : 'เกิดข้อผิดพลาด ไม่สามารถ ค้นคืนข้อมูล' + err.message + err.name;
           this.Message =
-            'เกิดข้อผิดพลาด ไม่สามารถ ค้นคืนข้อมูล ::: ' + err.message;
+            'เกิดข้อผิดพลาด ไม่สามารถ ค้นคืนข้อมูล ::: ' + err.stack;
           console.error(err);
           this.hideWaitScreen();
           alert(this.Message);
