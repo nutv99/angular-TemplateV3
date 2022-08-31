@@ -172,7 +172,6 @@ export class AppComponent implements OnInit, AfterViewInit {
           this.Message =
             'เกิดข้อผิดพลาด ไม่สามารถ ค้นคืนข้อมูล ::: ' + err.message;
           console.error(err);
-
           this.hideWaitScreen();
           alert(this.Message);
         },
