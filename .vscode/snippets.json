@@ -20,7 +20,7 @@
       "      modepost='y'",
       "      modepatch='y'",
       "      modeDelete='y'",
-      "      mode='AED'",
+      "      mode='2'",
       "    />",
       "  </div>",
       "  <button type='submit' (click)='SaveData()'>Submit</button>",

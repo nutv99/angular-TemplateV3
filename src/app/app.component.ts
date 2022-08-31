@@ -248,10 +248,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     //   console.log(`Map key is:${mapKey} and value is:${mapValue}`);
     // }
 
-    this.editPayload = this.generalService.takeDataPatchByAttribute(
-      this.productForm,
-      this.editPayload
-    );
+    this.editPayload = this.generalService.takeDataPatchByAttribute();
     console.log('Payload By Elem ', this.editPayload);
     return;
 
