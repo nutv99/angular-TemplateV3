@@ -25,10 +25,11 @@ var st2:string  = '';
 
 }
 
-takeDataPatchByAttribute (dataOnForm:any,dataToPatch:any) { 
+takeDataPatchByAttribute () { 
   var stJson:string  = '{';
   var st2:string  = '';
-  var elemTemp : HTMLInputElement;
+  var elemTemp : HTMLInputElement ;
+  var dataToPatch : any ;
   
   const refs = document.querySelectorAll(`[modepatch*="y"]`);
   
