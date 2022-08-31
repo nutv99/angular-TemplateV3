@@ -58,8 +58,6 @@ interface Model_Product_Post {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-
-
 export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('myNameElem') myNameElem: ElementRef;
 
@@ -248,14 +246,22 @@ export class AppComponent implements OnInit, AfterViewInit {
     //   let mapKey = entry[0];
     //   let mapValue = entry[1];
     //   console.log(`Map key is:${mapKey} and value is:${mapValue}`);
-    // } 
+    // }
 
-    this.generalService.takeDataPatchByAttribute (this.productForm, this.editPayload);
+    this.editPayload = this.generalService.takeDataPatchByAttribute(
+      this.productForm,
+      this.editPayload
+    );
+    console.log('Payload By Elem ', this.editPayload);
+
     var aaa = this.productForm;
     var bbb = this.editPayload;
     var st = '{';
 
-    this.editPayload = this.generalService.takeDataPatchByModel(this.productForm, this.editPayload);
+    this.editPayload = this.generalService.takeDataPatchByModel(
+      this.productForm,
+      this.editPayload
+    );
     //alert(bbb.itemName)
     console.log('Payload ', this.editPayload);
 

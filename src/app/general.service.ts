@@ -28,13 +28,15 @@ var st2:string  = '';
 takeDataPatchByAttribute (dataOnForm:any,dataToPatch:any) { 
   var stJson:string  = '{';
   var st2:string  = '';
+  var elemTemp : HTMLInputElement;
   
   const refs = document.querySelectorAll(`[modepatch*="y"]`);
-  alert(refs.length);
+  
   for (let i = 0; i <= refs.length; i++) {
     console.log(refs[i].id);
-    var cc = document.getElementById(refs[i].id) as HTMLInputElement;
-    console.log('By QALL ', cc.value);
+    elemTemp = document.getElementById(refs[i].id) as HTMLInputElement; 
+    stJson = stJson + '"' + refs[i].id + '" : "' +  elemTemp.value + '",' ;
+
   }
   
     st2 = stJson.slice(0, -1) + '}';
