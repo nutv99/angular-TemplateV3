@@ -142,7 +142,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     console.log('Key--After ViewInit', Object.keys(this.DataFromBackEnd));
   }
 
-
+// GET DATA BY ID
   get_EmployeeByID() {
   const http$ = this.myhttp.get<Model_DepartmentEdit>(
       'https://lovetoshopmall.com/dataservice/categoryTest888.php'
@@ -172,6 +172,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       });
   }
 
+// GET ALL DATA   
   getAllEmployees(): Observable<Model_DepartmentEdit> {
     return this.myhttp
       .get<Model_DepartmentEdit>(this.apiURL + '/categoryTest.php')
