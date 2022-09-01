@@ -98,7 +98,8 @@
       "url_$1_getByID : string = '' ;",
       "url_$1_POST    : string = '' ;",
       "url_$1_PATCH   : string = '' ;",
-      "url_$1_DELETE  : string  = '' ;"
+      "url_$1_DELETE  : string  = '' ;",
+      "$1_Form : any; // ตัวแปรฟอร์ม"
     ],
     "description": "Log output to console"
   },
@@ -123,6 +124,12 @@
     "prefix": "Noom_Function",
     "body": [
       "//********************  Process Function $1 ********************",
+      "create_$1_Form() {",
+      "//**** สร้าง Reactive Form ****** ",
+      "this.$1Form = this.fb.group({",
+      "  name: ['', Validators.required],",
+      "  email: ['', [Validators.required, Validators.email]]",
+      "}",
       "get_$1_ALL() {",
       "// สำหรับ Get ALL $1 ",
       "}",
