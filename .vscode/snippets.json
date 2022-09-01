@@ -83,8 +83,15 @@
       "export interface $1_Models_DELETE {",
       "// รายการ ฟิลด์ จาก Swagger ของ  DELETE",
       "}",
-      "// Copy ด้านล่างไปใส่ใน ts ของ Component",
-      "import {$1_Models,$1_Models_GetALL,$1_Models_GetByID,$1_Models_POST,$1_Models_PATCH,$1_Models_Delete} from './models/$1' ;"
+      "// Copy ด้านล่างไปใส่ใน ts ของ Component ตรง import section ",
+      "import {$1_Models,$1_Models_GetALL,$1_Models_GetByID,$1_Models_POST,$1_Models_PATCH,$1_Models_Delete} from './models/$1' ;",
+      "// Copy ด้านล่างไปใส่ใน ts ของ Component ตรง  var section (ใต้  Export เลย)",
+      "$1_Data_Var = {} as $1_Models ;",
+      "$1_getAll_Var = {} as $1_Models_GetALL ;",
+      "$1_getByID_Var = {} as $1_Models_GetByID ;",
+      "$1_POST_Var = {} as $1_Models_POST ;",
+      "$1_PATCH_Var = {} as $1_Models_PATCH ;",
+      "$1_DELETE_Var = {} as $1_Models_PATCH ;"
     ],
     "description": "Log output to console"
   }
