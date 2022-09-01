@@ -61,34 +61,29 @@
     "prefix": "Model",
     "body": [
       "// Table $1  Models ",
-"export interface $1_Models {",
-"}",
-"// Model สำหรับ Get ALL",
-"export interface $1_GetALL {",
-  "// รายการ ฟิลด์ จาก Swagger ของ Get ALL",
-"}",
-"// Model สำหรับ Get By ID",
-"export interface $1_ByID {",
-  "// รายการ ฟิลด์ จาก Swagger ของ Get By ID",
-"}",
-"// Model สำหรับ Post",
-"export interface $1_POST {",
- " // รายการ ฟิลด์ จาก Swagger ของ  POST",
-"}",
-"// Model สำหรับ PATCH",
-"export interface $1_POST {",
-  "// รายการ ฟิลด์ จาก Swagger ของ  POST",
-"}",
-"// Model สำหรับ delete",
-"export interface $1_POST {",
-  "// รายการ ฟิลด์ จาก Swagger ของ  POST",
-"}"
+      "export interface $1_Models {",
+      "}",
+      "// Model สำหรับ Get ALL",
+      "export interface $1_GetALL {",
+      "// รายการ ฟิลด์ จาก Swagger ของ Get ALL",
+      "}",
+      "// Model สำหรับ Get Get_By ID",
+      "export interface $1_ByID {",
+      "// รายการ ฟิลด์ จาก Swagger ของ Get By ID",
+      "}",
+      "// Model สำหรับ Post",
+      "export interface $1_POST {",
+      " // รายการ ฟิลด์ จาก Swagger ของ  POST",
+      "}",
+      "// Model สำหรับ PATCH",
+      "export interface $1_PATCH {",
+      "// รายการ ฟิลด์ จาก Swagger ของ  POST",
+      "}",
+      "// Model สำหรับ delete",
+      "export interface $1_DELETE {",
+      "// รายการ ฟิลด์ จาก Swagger ของ  POST",
+      "}"
     ],
     "description": "Log output to console"
-  },
-  
-
-    
-
-
+  }
 } //  end of Snippet
