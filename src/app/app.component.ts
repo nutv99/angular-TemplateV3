@@ -1,3 +1,6 @@
+ 
+
+
 import {
   Component,
   VERSION,
@@ -167,7 +170,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     const http$ = this.myhttp.get<Model_DepartmentEdit>(
       'https://lovetoshopmall.com/dataservice/categoryTest999.php'
     );
-
     http$
       .pipe(
         tap((data) => {

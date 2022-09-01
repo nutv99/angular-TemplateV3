@@ -110,5 +110,29 @@
       "import { WaitscreenComponent } from './waitscreen/waitscreen.component';"
     ],
     "description": "Log output to console"
-  }
+  },
+  "Noom_Function": {
+    "scope": "javascript,typescript",
+    "prefix": "Noom_Function",
+    "body": [
+      "//********************  Process Function $1 ********************",
+      "get_$1_ALL() {",
+        "// สำหรับ Get ALL $1 ",             
+      "}",
+      "get_$1_ByID() {",
+        "// สำหรับ Get ByID $1 ",             
+      "}",
+      "POST_$1() {",
+        "// สำหรับ POST $1 ",             
+      "}",
+     "PATCH_$1() {",
+         "// สำหรับ PATCH $1 ",             
+      "}",
+      "DELETE_$1() {",
+        "// สำหรับ Delete $1 ",             
+     "}",
+    ],
+    "description": "Log output to console"
+  },
+
 } //  end of Snippet
