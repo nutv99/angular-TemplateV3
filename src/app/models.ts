@@ -1,5 +1,6 @@
 // Model ต่างๆของ  Table Product  Models 
 export interface Product_Models {
+  
 }
 // Model สำหรับ Get ALL
 export interface Product_Models_GetALL {
