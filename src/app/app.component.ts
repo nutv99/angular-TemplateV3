@@ -66,6 +66,14 @@ interface Model_Product_Post {
 export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('myNameElem') myNameElem: ElementRef;
 
+  // Copy ด้านล่างไปใส่ใน ts ของ Component ตรง  var section (ใต้  Export เลย)
+Product_Data_Var = {} as Product_Models ;
+Product_getAll_Var = {} as Product_Models_GetALL ;
+Product_getByID_Var = {} as Product_Models_GetByID ;
+Product_POST_Var = {} as Product_Models_POST ;
+Product_PATCH_Var = {} as Product_Models_PATCH ;
+Product_DELETE_Var = {} as Product_Models_Delete ;
+
   waitScreenShow: boolean = false;
   Message: string = 'idle';
   MessageErr!: any;

@@ -68,7 +68,7 @@
       "// รายการ ฟิลด์ จาก Swagger ของ Get ALL จาก $1",
       "}",
       "// Model สำหรับ Get Get_By ID",
-      "export interface $1_Models_ByID {",
+      "export interface $1_Models_GETByID {",
       "// รายการ ฟิลด์ จาก Swagger ของ Get $1 By ID",
       "}",
       "// Model สำหรับ Post",
