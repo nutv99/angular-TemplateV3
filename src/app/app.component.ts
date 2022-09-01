@@ -1,6 +1,3 @@
- 
-
-
 import {
   Component,
   VERSION,
@@ -81,7 +78,16 @@ export class AppComponent implements OnInit, AfterViewInit {
   Product_getByID_Var = {} as Product_Models_GetByID;
   Product_POST_Var = {} as Product_Models_POST;
   Product_PATCH_Var = {} as Product_Models_PATCH;
-  Product_DELETE_Var = {} as Product_Models_Delete;
+  Product_DELETE_Var = {} as Product_Models_Delete; 
+
+  //********** ตัวแปร url สำหรับ  Method ต่าง ๆ  ****************
+Product_getAll_url  : string = '' ;
+Product_getByID_url : string = '' ;
+Product_POST_url    : string = '' ;
+Product_PATCH_url   : string = '' ;
+Product_DELETE_url  : string  = '' ;
+
+
 
   waitScreenShow: boolean = false;
   Message: string = 'idle';
@@ -122,10 +128,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     private myhttp: HttpClient,
     private fb: FormBuilder,
     private generalService: GeneralServiceByNoom
-  ) {
-    
-  } 
-
+  ) {}
 
   ngOnInit() {
     // this.get_EmployeeByID();
@@ -195,7 +198,6 @@ export class AppComponent implements OnInit, AfterViewInit {
         },
         complete: () => {
           console.info('complete'); // Stop & Destroy Observable
-
           this.hideWaitScreen();
         },
       });
@@ -230,9 +232,6 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   onSubmit() {
     const input = document.querySelector('#message') as HTMLInputElement | null;
-
-    //if (input != null) {
-    //console.log('By sss', input.value); // 👉️ "Initial value"
 
     const refs = document.querySelectorAll(`[modepatch*="y"]`);
     alert(refs.length);
@@ -342,22 +341,25 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   //       );
 
-  // } 
+  // }
 
   //********************  Process Function Product ********************
   get_Product_ALL() {
-  // สำหรับ Get ALL Product 
+    // สำหรับ Get ALL Product
   }
   get_Product_ByID() {
-  // สำหรับ Get ByID Product 
+    // สำหรับ Get ByID Product
+    // 1.รับค่า id จาก url
+    // 2.สร้าง  url string -->
+    // 3.เรียก httpget โดย พิมพ์ NoomHttp_GET
   }
   POST_Product() {
-  // สำหรับ POST Product 
+    // สำหรับ POST Product
   }
   PATCH_Product() {
-  // สำหรับ PATCH Product 
+    // สำหรับ PATCH Product
   }
   DELETE_Product() {
-  // สำหรับ Delete Product 
+    // สำหรับ Delete Product
   }
 }

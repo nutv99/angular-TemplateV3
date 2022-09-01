@@ -86,12 +86,19 @@
       "// Copy ด้านล่างไปใส่ใน ts ของ Component ตรง import section ",
       "import {$1_Models,$1_Models_GetALL,$1_Models_GetByID,$1_Models_POST,$1_Models_PATCH,$1_Models_Delete} from './models/$1' ;",
       "// Copy ด้านล่างไปใส่ใน ts ของ Component ตรง  var section (ใต้  Export เลย)",
+      "// *****  ตัวแปร ทำงานต่างๆ ****** ",
       "$1_Data_Var = {} as $1_Models ;",
       "$1_getAll_Var = {} as $1_Models_GetALL ;",
       "$1_getByID_Var = {} as $1_Models_GetByID ;",
       "$1_POST_Var = {} as $1_Models_POST ;",
       "$1_PATCH_Var = {} as $1_Models_PATCH ;",
-      "$1_DELETE_Var = {} as $1_Models_PATCH ;"
+      "$1_DELETE_Var = {} as $1_Models_PATCH ;",
+      "//********** ตัวแปร url สำหรับ  Method ต่าง ๆ  ****************",
+      "url_$1_getAll  : string = '' ;",
+      "url_$1_getByID : string = '' ;",
+      "url_$1_POST    : string = '' ;",
+      "url_$1_PATCH   : string = '' ;",
+      "url_$1_DELETE  : string  = '' ;"
     ],
     "description": "Log output to console"
   },
@@ -117,22 +124,21 @@
     "body": [
       "//********************  Process Function $1 ********************",
       "get_$1_ALL() {",
-        "// สำหรับ Get ALL $1 ",             
+      "// สำหรับ Get ALL $1 ",
       "}",
       "get_$1_ByID() {",
-        "// สำหรับ Get ByID $1 ",             
+      "// สำหรับ Get ByID $1 ",
       "}",
       "POST_$1() {",
-        "// สำหรับ POST $1 ",             
+      "// สำหรับ POST $1 ",
       "}",
-     "PATCH_$1() {",
-         "// สำหรับ PATCH $1 ",             
+      "PATCH_$1() {",
+      "// สำหรับ PATCH $1 ",
       "}",
       "DELETE_$1() {",
-        "// สำหรับ Delete $1 ",             
-     "}",
+      "// สำหรับ Delete $1 ",
+      "}"
     ],
     "description": "Log output to console"
-  },
-
+  }
 } //  end of Snippet

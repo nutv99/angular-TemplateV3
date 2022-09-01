@@ -49,9 +49,11 @@ export interface Product_Models_DELETE {
 // Copy ด้านล่างไปใส่ใน ts ของ Component ตรง import section 
 import {Product_Models,Product_Models_GetALL,Product_Models_GetByID,Product_Models_POST,Product_Models_PATCH,Product_Models_Delete} from './models/Product' ;
 // Copy ด้านล่างไปใส่ใน ts ของ Component ตรง  var section (ใต้  Export เลย)
+// *****  ตัวแปร ทำงานต่างๆ ****** 
 Product_Data_Var = {} as Product_Models ;
 Product_getAll_Var = {} as Product_Models_GetALL ;
 Product_getByID_Var = {} as Product_Models_GetByID ;
 Product_POST_Var = {} as Product_Models_POST ;
 Product_PATCH_Var = {} as Product_Models_PATCH ;
 Product_DELETE_Var = {} as Product_Models_PATCH ;
+
