@@ -136,6 +136,7 @@ Product_DELETE_Var = {} as Product_Models_Delete ;
         console.log(res);
         this.Message = 'ค้นคืนข้อมูล สำเร็จ' + JSON.stringify(res);
         this.DataFromBackEnd = res;
+        this.Product_getAll_Var = res ;
         console.log('All Key', Object.keys(res));
       },
       error: (err: Error) => {
