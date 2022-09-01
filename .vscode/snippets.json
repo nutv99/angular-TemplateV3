@@ -126,7 +126,7 @@
       "//********************  Process Function $1 ********************",
       "create_$1_Form() {",
       "//**** สร้าง Reactive Form ****** ",
-      "this.$1Form = this.fb.group({",
+      "this.$1_Form = this.fb.group({",
       "  name: ['', Validators.required],",
       "  email: ['', [Validators.required, Validators.email]]",
       "}",
