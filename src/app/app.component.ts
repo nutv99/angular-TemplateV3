@@ -140,6 +140,9 @@ Product_DELETE_url  : string  = '' ;
       BalanceStock: [0],
     });
 
+    
+    this.myhttp.get(this.Product_getByID_url)  
+  
     let data = this.getAllEmployees();
     data.subscribe({
       next: (res) => {
