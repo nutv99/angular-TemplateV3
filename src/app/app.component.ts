@@ -20,6 +20,10 @@ import { retry, catchError } from 'rxjs/operators';
 import { GeneralServiceByNoom } from './general.service';
 import { WaitscreenComponent } from './waitscreen/waitscreen.component';
 
+
+// Copy ด้านล่างไปใส่ใน ts ของ Component
+import {Product_Models,Product_Models_GetALL,Product_Models_GetByID,Product_Models_POST,Product_Models_PATCH,Product_Models_Delete} from './models' ;
+
 // Step-2 ประกาศ Model
 interface Model_CustomerADD {
   id: string;
