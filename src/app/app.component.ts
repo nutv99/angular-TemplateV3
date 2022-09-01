@@ -342,5 +342,22 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   //       );
 
-  // }
+  // } 
+
+  //********************  Process Function Product ********************
+  get_Product_ALL() {
+  // สำหรับ Get ALL Product 
+  }
+  get_Product_ByID() {
+  // สำหรับ Get ByID Product 
+  }
+  POST_Product() {
+  // สำหรับ POST Product 
+  }
+  PATCH_Product() {
+  // สำหรับ PATCH Product 
+  }
+  DELETE_Product() {
+  // สำหรับ Delete Product 
+  }
 }
