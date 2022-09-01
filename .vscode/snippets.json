@@ -94,5 +94,21 @@
       "$1_DELETE_Var = {} as $1_Models_PATCH ;"
     ],
     "description": "Log output to console"
+  },
+  "Noom_Import": {
+    "scope": "javascript,typescript",
+    "prefix": "Noom_Import",
+    "body": [
+      "import { Component,OnInit,ViewChild,ElementRef,AfterViewInit} from '@angular/core';",
+      "import { HttpClient } from '@angular/common/http';",
+      "import { FormControl,FormBuilder,Validators,FormGroup} from '@angular/forms';",
+      "import { Subject } from 'rxjs';",
+      "import { delay, map, tap, finalize } from 'rxjs/operators';",
+      "import { Observable, throwError } from 'rxjs';",
+      "import { retry, catchError } from 'rxjs/operators';",
+      "import { GeneralServiceByNoom } from './general.service';",
+      "import { WaitscreenComponent } from './waitscreen/waitscreen.component';"
+    ],
+    "description": "Log output to console"
   }
 } //  end of Snippet

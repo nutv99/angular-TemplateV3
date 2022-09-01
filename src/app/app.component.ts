@@ -20,9 +20,15 @@ import { retry, catchError } from 'rxjs/operators';
 import { GeneralServiceByNoom } from './general.service';
 import { WaitscreenComponent } from './waitscreen/waitscreen.component';
 
-
 // Copy ด้านล่างไปใส่ใน ts ของ Component
-import {Product_Models,Product_Models_GetALL,Product_Models_GetByID,Product_Models_POST,Product_Models_PATCH,Product_Models_Delete} from './models' ;
+import {
+  Product_Models,
+  Product_Models_GetALL,
+  Product_Models_GetByID,
+  Product_Models_POST,
+  Product_Models_PATCH,
+  Product_Models_Delete,
+} from './models';
 
 // Step-2 ประกาศ Model
 interface Model_CustomerADD {
@@ -67,12 +73,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('myNameElem') myNameElem: ElementRef;
 
   // Copy ด้านล่างไปใส่ใน ts ของ Component ตรง  var section (ใต้  Export เลย)
-Product_Data_Var = {} as Product_Models ;
-Product_getAll_Var = {} as Product_Models_GetALL ;
-Product_getByID_Var = {} as Product_Models_GetByID ;
-Product_POST_Var = {} as Product_Models_POST ;
-Product_PATCH_Var = {} as Product_Models_PATCH ;
-Product_DELETE_Var = {} as Product_Models_Delete ;
+  Product_Data_Var = {} as Product_Models;
+  Product_getAll_Var = {} as Product_Models_GetALL;
+  Product_getByID_Var = {} as Product_Models_GetByID;
+  Product_POST_Var = {} as Product_Models_POST;
+  Product_PATCH_Var = {} as Product_Models_PATCH;
+  Product_DELETE_Var = {} as Product_Models_Delete;
 
   waitScreenShow: boolean = false;
   Message: string = 'idle';
@@ -114,11 +120,9 @@ Product_DELETE_Var = {} as Product_Models_Delete ;
     private fb: FormBuilder,
     private generalService: GeneralServiceByNoom
   ) {
-    // this.productForm = this.fb.group({
-    //   itemCode: new FormControl('', Validators.required),
-    //   itemName: new FormControl('', Validators.required),
-    // });
-  }
+    
+  } 
+
 
   ngOnInit() {
     // this.get_EmployeeByID();
@@ -136,7 +140,7 @@ Product_DELETE_Var = {} as Product_Models_Delete ;
         console.log(res);
         this.Message = 'ค้นคืนข้อมูล สำเร็จ' + JSON.stringify(res);
         this.DataFromBackEnd = res;
-        this.Product_getAll_Var = res ;
+        this.Product_getAll_Var = res;
         console.log('All Key', Object.keys(res));
       },
       error: (err: Error) => {
