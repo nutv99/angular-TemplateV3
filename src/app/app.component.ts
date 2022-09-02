@@ -348,6 +348,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onSubmit99(f:any){
+    
     let urlApi = 'https://lovetoshopmall.com/dataservice/' ;
     let data = f.value;
     this.myhttp.post(urlApi+'show_data.php',data)    
