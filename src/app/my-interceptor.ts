@@ -12,6 +12,7 @@ export class MyInterceptor implements HttpInterceptor {
      
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     console.log('Interceptor ran..');
+    
     return next.handle(req);
   }
 }
