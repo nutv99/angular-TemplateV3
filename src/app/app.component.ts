@@ -6,7 +6,12 @@ import {
   ElementRef,
   AfterViewInit,
 } from '@angular/core';
-import { HttpClient,HttpHeaders, HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpErrorResponse,
+  HttpResponse,
+} from '@angular/common/http';
 import {
   FormControl,
   FormBuilder,
@@ -103,8 +108,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   Product_GetAll: Model_Product_GetAll;
   Product_GetByID!: Model_Product_GetById;
-  Product_Post!: Model_Product_Post; 
-  responseValue:any ;
+  Product_Post!: Model_Product_Post;
+  responseValue: any;
   //endpoint:string = '';
 
   constructor(
@@ -153,13 +158,18 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   // GET DATA BY ID
+ id = 1 ;
+ 
   get_EmployeeByID() {
     this.waitScreenShow = true;
+
     const http$ = this.myhttp.get<Model_DepartmentEdit>(
-      'https://lovetoshopmall.com/dataservice/categoryTest999.php'
+      'www.sanook.com/?id=' + this.id 
     );
+
     http$
       .pipe(
+        retry(1), // บางที Server ยังไม่ส่งมา
         tap((data) => {
           console.log('Success', data);
         }),
@@ -171,14 +181,20 @@ export class AppComponent implements OnInit, AfterViewInit {
           this.Message = 'ค้นคืนข้อมูล สำเร็จ' + res;
           this.hideWaitScreen();
         },
-        error: (err:HttpErrorResponse ) => {
-           // กรณี error
+        error: (err: HttpErrorResponse) => {
+          // กรณี error
           if (err.error instanceof Error) {
             // กรณี error ฝั่งผู้ใช้งาน หรือ การเชื่อมต่อเกิด error ขึ้น
             console.log('An error occurred:', err.error.message);
-          }else{ // กรณี error ฝั่ง server ไม่พบไฟล์ ,server error 
-            console.log(`Backend returned code ${err.status}, body was: ${err.error}`);
-          }     
+          } else {
+            // กรณี error ฝั่ง server ไม่พบไฟล์ ,server error
+            console.log(
+              `Backend returned code ${err.status}, body was: ${err.error}`
+            );
+          }
+          alert('Error' + err.error.message);
+          delay(1000);
+          this.hideWaitScreen();
         },
         complete: () => {
           console.info('complete'); // Stop & Destroy Observable
@@ -347,24 +363,26 @@ export class AppComponent implements OnInit, AfterViewInit {
     // สำหรับ Delete Product
   }
 
-  onSubmit99(f:any){
-    
-    let urlApi = 'https://lovetoshopmall.com/dataservice/' ;
+  onSubmit99(f: any) {
+    let urlApi = 'https://lovetoshopmall.com/dataservice/';
     let data = f.value;
-    this.myhttp.post(urlApi+'show_data.php',data)    
-    .subscribe(
-     result =>{
-       this.responseValue = result;
-       console.log(result);
-     },
-    ( err:HttpErrorResponse ) => {
-      // กรณี error
-      if (err.error instanceof Error) {
-        // กรณี error ฝั่งผู้ใช้งาน หรือ การเชื่อมต่อเกิด error ขึ้น
-        console.log('An error occurred:', err.error.message);
-      }else{ // กรณี error ฝั่ง server ไม่พบไฟล์ ,server error 
-        console.log(`Backend returned code ${err.status}, body was: ${err.error}`);
-      }       
-    });
+    this.myhttp.post(urlApi + 'show_data.php', data).subscribe(
+      (result) => {
+        this.responseValue = result;
+        console.log(result);
+      },
+      (err: HttpErrorResponse) => {
+        // กรณี error
+        if (err.error instanceof Error) {
+          // กรณี error ฝั่งผู้ใช้งาน หรือ การเชื่อมต่อเกิด error ขึ้น
+          console.log('An error occurred:', err.error.message);
+        } else {
+          // กรณี error ฝั่ง server ไม่พบไฟล์ ,server error
+          console.log(
+            `Backend returned code ${err.status}, body was: ${err.error}`
+          );
+        }
+      }
+    );
   }
 }
